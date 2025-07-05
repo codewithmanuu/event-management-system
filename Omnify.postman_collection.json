@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "492eb403-182b-4958-b3ba-f0f400273ab4",
+		"name": "Omnify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28006190",
+		"_collection_link": "https://moments-4772.postman.co/workspace/Interviews~aac3039d-b6c1-4f38-b7b6-97c3b924ac18/collection/28006190-492eb403-182b-4958-b3ba-f0f400273ab4?action=share&source=collection_link&creator=28006190"
+	},
+	"item": [
+		{
+			"name": "host-event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Scriptwriting\",\r\n    \"location\":\"Delhi\",\r\n    \"start_time\":\"2025-07-09:21:30:00\",\r\n    \"end_time\":\"2025-07-12:21:30:00\",\r\n    \"max_capacity\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/v1/events/"
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-events",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Scriptwriting",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Delhi",
+							"type": "text"
+						},
+						{
+							"key": "start_time",
+							"value": "2025-07-05:21:30:00",
+							"type": "text"
+						},
+						{
+							"key": "end_time",
+							"value": "2025-07-12",
+							"type": "text"
+						},
+						{
+							"key": "max_capacity",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/v1/events/"
+			},
+			"response": []
+		},
+		{
+			"name": "event-register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Manu\",\r\n    \"email\":\"manu@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/events/{{event_id}}/register/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"events",
+						"{{event_id}}",
+						"register",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Manu",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "manukrishna@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-attendees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/v1/events/{{event_id}}/attendees/"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "event_id",
+			"value": "9cb0c12e-4d53-4131-a47c-a6798e4b5041",
+			"type": "string"
+		}
+	]
+}
