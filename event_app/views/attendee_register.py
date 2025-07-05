@@ -1,12 +1,14 @@
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from drf_spectacular.utils import extend_schema
 from event_app.models.attendee_tables import Attendee
 from rest_framework.pagination import PageNumberPagination
 from event_app.serializers.attendee_serializers import RegisterationSerializer
 
 
 class EventRegisterAPI(APIView):
+    @extend_schema(request=RegisterationSerializer,responses={201: None, 400: dict})
     def post(self, request, event_id):
         data = request.data.copy()
         data["event"] = event_id

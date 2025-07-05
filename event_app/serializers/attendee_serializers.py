@@ -6,20 +6,20 @@ from event_app.models.attendee_tables import Attendee
 
 
 class RegisterationSerializer(serializers.Serializer):
-    event = serializers.CharField(required=True)
+    event = serializers.CharField(read_only=True)
     name = serializers.CharField(required=True)
     email = serializers.EmailField(required=True)
 
-    def validate_event(self, value):
+    def validate(self, data):
         event_id = self.context.get("event_id")
         try:
             event = Event.objects.get(id=event_id)
             if event.is_full:
-                raise serializers.ValidationError("Event is full.")
+                raise serializers.ValidationError({"event":"Event is full."})
         except Event.DoesNotExist:
-            raise serializers.ValidationError("Event not found.")
-
-        return event
+            raise serializers.ValidationError({"event":"Event not found."})
+        data['event'] = event
+        return data
 
     def validate_email(self, value):
         event_id = self.context.get("event_id")
