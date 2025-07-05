@@ -53,7 +53,7 @@ The **Mini Event Management System** is a lightweight, containerized web applica
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/codewithmanuu/Eeda-chatapp.git
+   git clone https://github.com/codewithmanuu/event-management-system.git
 
 
 2. **Build and start the services using Docker Compose:**
