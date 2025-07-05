@@ -1,6 +1,6 @@
-# Mini Event Management System
+# Event Management System
 
-The **Mini Event Management System** is a lightweight, containerized web application built with Django and Django REST Framework. It provides a clean API for creating events and managing attendee registrations, with built-in validation, caching, and auto-generated API documentation via Swagger.
+The **Event Management System** is a lightweight, containerized web application built with Django and Django REST Framework. It provides a clean API for creating events and managing attendee registrations, with built-in validation, caching, and auto-generated API documentation via Swagger.
 
 ## Features
 
@@ -67,11 +67,11 @@ The **Mini Event Management System** is a lightweight, containerized web applica
 3. **Make migrations and migrate**
 
    ```bash
-   - sudo docker-compose exec django python manage.py makemigratios event_app
+   - sudo docker-compose exec django python manage.py makemigrations event_app
    - sudo docker-compose exec django python manage.py migrate
 
    ```windows
-   - docker-compose exec django python manage.py makemigratios event_app
+   - docker-compose exec django python manage.py makemigrations event_app
    - docker-compose exec django python manage.py migrate
 
 3. **Create a superuser for accessing the Django admin panel:**
