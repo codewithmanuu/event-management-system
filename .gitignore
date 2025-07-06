@@ -127,13 +127,7 @@ venv.bak/
 *.pem
 
 # Local .env files
-*.env
-.env.local
-.env.*.local
-.env.development.local
-.env.test.local
-.env.production.local
-.env.staging.local
+
 
 # macOS
 .DS_Store
